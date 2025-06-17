@@ -1,10 +1,13 @@
-# Entry point for the student management system
 from student_data import students, add_student, view_students, get_average_grade
 
-print("📚 Welcome to the Student Record System")
+print(" Welcome to the Student Management System")
 
 while True:
-    print("\n1. Add student\n2. View students\n3. Get average grade\n4. Exit")
+    print("1. Add Student")
+    print("2. View Students")
+    print("3. Get Average Grade")
+    print("4. Exit")
+
     choice = input("Choose an option: ")
 
     if choice == "1":
@@ -12,9 +15,9 @@ while True:
     elif choice == "2":
         view_students()
     elif choice == "3":
-        print(f"📊 Average Grade: {get_average_grade():.2f}")
+        get_average_grade()
     elif choice == "4":
-        print("Goodbye!")
+        print("GoodBye!")
         break
     else:
-        print("Invalid option.")
+        print("Invalid option.\n")

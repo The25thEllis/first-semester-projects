@@ -1,20 +1,41 @@
+# function to collect student info from the user.
 students = []
 
 def add_student():
-    """
-    TODO: Prompt the user to enter student name, age, and grade.
-    Append the student as a dictionary to the students list.
-    """
-    pass
+    name = input("Enter student name: ")
+    age = input("Enter student age: ")
+    grade = input("Enter student grade: ")
+
+    student = {
+        "name": name,
+        "age": age,
+        "grade": float(grade)
+    }
+
+    students.append(student)
+    print("Student added!\n")
+
+#function to display all students.
 
 def view_students():
-    """
-    TODO: Loop through the students list and print each student's info.
-    """
-    pass
+    if len(students) == 0:
+        print("No students yet.\n")
+    else:
+        for student in students:
+            print("Name:", student["name"])
+            print("Age:", student["age"])
+            print("Grade:", student["grade"])
+            print()
 
+#return the average grade of all students.
 def get_average_grade():
-    """
-    TODO: Return the average grade of all students.
-    """
-    pass
+    if len(students) == 0:
+        print("No students added yet.\n")
+    else:
+        total = 0
+        for student in students:
+            total += student["grade"]
+        average = total / len(students)
+        print("Average grade:", average, "\n")
+
+
